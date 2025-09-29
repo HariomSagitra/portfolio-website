@@ -168,6 +168,51 @@
             nav ul li {
                 margin: 10px 0;
             }
+
+
+            
+            @media (max-width: 992px) {
+    .homeSection {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 50px 5%;
+    }
+
+    .homeLeft, .homeRight {
+        max-width: 100%;
+    }
+
+    .homeRight {
+        margin-bottom: 30px;
+    }
+
+    .homeRight .profileImg {
+        max-width: 250px;
+    }
+
+    /* ===== Buttons Responsive ===== */
+    .homeButtons {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;    
+        gap: 15px;              
+    }
+
+    .homeButtons a {
+        width: 70%;             
+        text-align: center;
+        margin: 0;              
+    }
+
+    /* ===== Social Links Responsive ===== */
+    .socialLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.9rem;
+    }
+}
+
         }
     </style>
 </head>

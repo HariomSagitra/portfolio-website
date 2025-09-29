@@ -178,6 +178,54 @@ nav ul li a:hover {
     .homeRight .profileImg {
         max-width: 250px;
     }
+
+    /* ===== Responsive ===== */
+@media (max-width: 992px) {
+    .homeSection {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 50px 5%;
+        gap: 30px; /* Section ke items ke beech gap */
+    }
+
+    .homeLeft, .homeRight {
+        max-width: 100%;
+    }
+
+    /* ===== Right Image ===== */
+    .homeRight {
+        margin-bottom: 20px;
+    }
+
+    .homeRight .profileImg {
+        max-width: 300px; /* Thoda bada mobile me */
+        width: 80%;        /* Responsive width */
+    }
+
+    /* ===== Buttons ===== */
+    .homeButtons {
+        display: flex;
+        flex-direction: column; /* Vertical stack */
+        align-items: center;
+        gap: 15px; /* Buttons ke beech gap */
+    }
+
+    .homeButtons a {
+        width: 70%;  /* Mobile-friendly width */
+        text-align: center;
+        margin: 0;
+    }
+
+    /* ===== Social Links ===== */
+    .socialLinks {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+    }
+}
+
 }
 
     </style>
