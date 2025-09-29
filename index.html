@@ -11,165 +11,177 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <style>
-        /* ===== Global Styles ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+<style>
+    /* ===== Global Styles ===== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
 
-        body {
-            background-color: #000021;
-            color: #fff;
-            line-height: 1.6;
-        }
+    body {
+        background-color: #000021;
+        color: #fff;
+        line-height: 1.6;
+    }
 
-        /* ===== Navigation ===== */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 60px;
-            background-color: #12123e;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    /* ===== Navigation ===== */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 60px;
+        background-color: #12123e;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
 
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #fff;
-        }
+    nav .logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #fff;
+    }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
+    nav ul {
+        display: flex;
+        list-style: none;
+    }
 
-        nav ul li {
-            margin-left: 25px;
-        }
+    nav ul li {
+        margin-left: 25px;
+    }
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+    }
 
-        nav ul li a:hover {
-            color: #aa6b80;
-        }
+    nav ul li a:hover {
+        color: #aa6b80;
+    }
 
-        /* ===== Hero Section ===== */
+    /* ===== Hero Section ===== */
+    .hero {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 100px 60px;
+        flex-wrap: wrap;
+    }
+
+    .hero-left {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .hero-left h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-left .purple {
+        color: #aa6b80;
+    }
+
+    .hero-left h2 {
+        margin: 20px 0;
+        font-size: 1.8rem;
+        color: #ccc;
+    }
+
+    .hero-left .buttons {
+        margin-top: 40px;
+        display: flex;           /* Desktop view me horizontal layout */
+        flex-wrap: wrap;         /* Wrap if needed */
+        gap: 20px;               /* Space between buttons */
+    }
+
+    .hero-left .btn {
+        padding: 12px 25px;
+        border: 2px solid #fff;
+        border-radius: 6px;
+        background-color: #1e2167;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-align: center;
+    }
+
+    .hero-left .btn:hover {
+        background-color: #aa6b80;
+        border-color: #aa6b80;
+    }
+
+    /* Hero Right Image */
+    .hero-right {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-right img {
+        max-width: 45%;
+        border-radius: 160px;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+        background-color: #0e0e1a;
+        padding: 20px 0;
+        text-align: center;
+        color: #888;
+        margin-top: 50px;
+        font-size: 14px;
+    }
+
+    /* ===== Responsive ===== */
+    @media screen and (max-width: 900px) {
         .hero {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 100px 60px;
-            flex-wrap: wrap;
-        }
-
-        .hero-left {
-            flex: 1;
-            min-width: 300px;
+            flex-direction: column-reverse;
+            text-align: center;
         }
 
         .hero-left h1 {
-            font-size: 2.8rem;
-        }
-
-        .hero-left .purple {
-            color: #aa6b80;
+            font-size: 2.2rem;
         }
 
         .hero-left h2 {
-            margin: 20px 0;
-            font-size: 1.8rem;
-            color: #ccc;
+            font-size: 1.4rem;
         }
 
+        /* ===== Updated Buttons for Mobile ===== */
         .hero-left .buttons {
-            margin-top: 40px;
+            flex-direction: column;  /* Vertical stack */
+            align-items: center;     /* Center aligned */
+            gap: 15px;               /* Space between buttons */
         }
 
-        .hero-left .btn {
-            padding: 12px 25px;
-            margin-right: 20px;
-            border: 2px solid #fff;
-            border-radius: 6px;
-            background-color: #1e2167;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
+        .hero-left .buttons .btn {
+            width: 70%;               /* Mobile width */
+            margin: 0;                /* Margin handled by gap */
         }
 
-        .hero-left .btn:hover {
-            background-color: #aa6b80;
-            border-color: #aa6b80;
+        nav {
+            flex-direction: column;
+            padding: 20px;
         }
 
-        /* Hero Right Image */
-        .hero-right {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            justify-content: center;
+        nav ul {
+            flex-direction: column;
+            margin-top: 10px;
         }
 
-        .hero-right img {
-            max-width: 45%;
-            border-radius: 160px;
+        nav ul li {
+            margin: 10px 0;
         }
+    }
+</style>
 
-        /* ===== Footer ===== */
-        footer {
-            background-color: #0e0e1a;
-            padding: 20px 0;
-            text-align: center;
-            color: #888;
-            margin-top: 50px;
-            font-size: 14px;
-        }
-
-        /* ===== Responsive ===== */
-        @media screen and (max-width: 900px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-
-            .hero-left h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-left h2 {
-                font-size: 1.4rem;
-            }
-
-            .hero-left .buttons .btn {
-                margin-bottom: 20px;
-            }
-
-            nav {
-                flex-direction: column;
-                padding: 20px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                margin-top: 10px;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-        }
-    </style>
 </head>
 
 <body>
