@@ -1,234 +1,260 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hariom - Home</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
 
 <style>
-    /* ===== Global Styles ===== */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
+/* ===== Reset & Global ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-        background-color: #000021;
-        color: #fff;
-        line-height: 1.6;
-    }
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #10102e, #4b426b);
+    color: #fff;
+}
 
-    /* ===== Navigation ===== */
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 60px;
-        background-color: #12123e;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
+/* ===== Navigation ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: rgba(18, 18, 62, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-    nav .logo {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: #fff;
-    }
+nav .logo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+}
 
-    nav ul {
-        display: flex;
-        list-style: none;
-    }
+nav ul {
+    display: flex;
+    list-style: none;
+}
 
-    nav ul li {
-        margin-left: 25px;
-    }
+nav ul li {
+    margin-left: 25px;
+}
 
-    nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 500;
-        transition: 0.3s;
-    }
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
 
-    nav ul li a:hover {
-        color: #aa6b80;
-    }
+nav ul li a:hover {
+    color: #aa6b80;
+}
 
-    /* ===== Hero Section ===== */
-    .hero {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 100px 60px;
-        flex-wrap: wrap;
-    }
+/* ===== Home Section ===== */
+.homeSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 10%;
+    min-height: 100vh;
+    gap: 40px;
+}
 
-    .hero-left {
-        flex: 1;
-        min-width: 300px;
-    }
+.homeLeft {
+    max-width: 55%;
+}
 
-    .hero-left h1 {
-        font-size: 2.8rem;
-    }
+.homeLeft h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
 
-    .hero-left .purple {
-        color: #aa6b80;
-    }
+.homeLeft h1 .purple {
+    color: #aa6b80;
+}
 
-    .hero-left h2 {
-        margin: 20px 0;
-        font-size: 1.8rem;
-        color: #ccc;
-    }
+.homeLeft h2 {
+    font-size: 2rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    height: 45px;
+}
 
-    .hero-left .buttons {
-        margin-top: 40px;
-        display: flex;           /* Desktop view me horizontal layout */
-        flex-wrap: wrap;         /* Wrap if needed */
-        gap: 20px;               /* Space between buttons */
-    }
+.homeLeft p {
+    font-size: 1.15rem;
+    color: #d3d3d3;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
 
-    .hero-left .btn {
-        padding: 12px 25px;
-        border: 2px solid #fff;
-        border-radius: 6px;
-        background-color: #1e2167;
-        color: #fff;
-        font-size: 16px;
-        cursor: pointer;
-        transition: 0.3s;
+/* ===== Buttons ===== */
+.homeButtons a {
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.homeButtons .btn {
+    background-color: #aa6b80;
+    color: #fff;
+}
+
+.homeButtons .btn:hover {
+    background-color: #fff;
+    color: #aa6b80;
+    border: 2px solid #aa6b80;
+}
+
+.homeButtons .btn-outline {
+    border: 2px solid #aa6b80;
+    background: transparent;
+    color: #aa6b80;
+}
+
+.homeButtons .btn-outline:hover {
+    background-color: #aa6b80;
+    color: #fff;
+}
+
+/* ===== Social Links ===== */
+.socialLinks {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.socialLinks a {
+    color: #d3d3d3;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.socialLinks a:hover {
+    color: #aa6b80;
+}
+
+/* ===== Right Image ===== */
+.homeRight {
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.homeRight .profileImg {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    transition: transform 0.3s;
+}
+
+.homeRight .profileImg:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+    .homeSection {
+        flex-direction: column-reverse;
         text-align: center;
+        padding: 50px 5%;
     }
 
-    .hero-left .btn:hover {
-        background-color: #aa6b80;
-        border-color: #aa6b80;
+    .homeLeft, .homeRight {
+        max-width: 100%;
     }
 
-    /* Hero Right Image */
-    .hero-right {
-        flex: 1;
-        min-width: 300px;
-        display: flex;
-        justify-content: center;
+    .homeRight {
+        margin-bottom: 30px;
     }
 
-    .hero-right img {
-        max-width: 45%;
-        border-radius: 160px;
+    .homeRight .profileImg {
+        max-width: 250px;
     }
 
-    /* ===== Footer ===== */
-    footer {
-        background-color: #0e0e1a;
-        padding: 20px 0;
+    @media (max-width: 992px) {
+    .homeSection {
+        flex-direction: column-reverse;
         text-align: center;
-        color: #888;
-        margin-top: 50px;
-        font-size: 14px;
+        padding: 50px 5%;
     }
 
-    /* ===== Responsive ===== */
-    @media screen and (max-width: 900px) {
-        .hero {
-            flex-direction: column-reverse;
-            text-align: center;
-        }
-
-        .hero-left h1 {
-            font-size: 2.2rem;
-        }
-
-        .hero-left h2 {
-            font-size: 1.4rem;
-        }
-
-        /* ===== Updated Buttons for Mobile ===== */
-        .hero-left .buttons {
-            flex-direction: column;  /* Vertical stack */
-            align-items: center;     /* Center aligned */
-            gap: 15px;               /* Space between buttons */
-        }
-
-        .hero-left .buttons .btn {
-            width: 70%;               /* Mobile width */
-            margin: 0;                /* Margin handled by gap */
-        }
-
-        nav {
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        nav ul {
-            flex-direction: column;
-            margin-top: 10px;
-        }
-
-        nav ul li {
-            margin: 10px 0;
-        }
+    .homeLeft, .homeRight {
+        max-width: 100%;
     }
-</style>
 
+    .homeRight {
+        margin-bottom: 30px;
+    }
+
+    .homeRight .profileImg {
+        max-width: 250px;
+    }
+
+    /* ===== Buttons Responsive ===== */
+    .homeButtons {
+        display: flex;
+        flex-direction: column; /* Vertical stack */
+        align-items: center;    /* Center align */
+        gap: 15px;              /* Space between buttons */
+    }
+
+    .homeButtons a {
+        width: 70%;             /* Mobile-friendly width */
+        text-align: center;
+        margin: 0;              /* Margin handled by gap */
+    }
+
+    /* ===== Social Links Responsive ===== */
+    .socialLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+}
+
+    </style>
 </head>
 
-<body>
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="logo">Hariom's Portfolio</div>
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="project.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+<section class="homeSection">
+  <div class="homeLeft">
+    <h1>Hi, I'm <span class="purple">Hariom</span></h1>
+    <h2><span id="typed"></span></h2>
+    <p>
+      I build responsive and dynamic web applications that solve real-world problems. 
+      Passionate about clean code, modern design, and continuous learning.
+    </p>
+    <div class="homeButtons">
+      <a href="Resume.pdf" class="btn">Download Resume</a>
+      <a href="https://github.com/HariomSagitra" target="_blank" class="btn btn-outline">Visit Github</a>
+    </div>
+    <div class="socialLinks">
+      <a href="https://www.linkedin.com/in/hariom-sagitra-41627b294" target" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/HariomSagitra" target="_blank">GitHub</a>
+    </div>
+  </div>
+  <div class="homeRight">
+    <img src="prob.jpg" alt="Hariom" class="profileImg">
+  </div>
+</section>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-left">
-            <h1>Hi, My name is <span class="purple">Hariom</span></h1>
-            <h2>I am a <span id="element"></span></h2>
-            <div class="buttons">
-                <a href="Resume.pdf" target="_blank" class="btn">Download Resume</a>
-                <a href="https://github.com/HariomSagitra" target="_blank" class="btn btn-outline">Visit Github</a>
-            </div>
-        </div>
-        <div class="hero-right">
-            <img src="om.jpg" alt="Hariom Image">
-        </div>
-    </section>
-
-    <!-- Optional: Footer -->
-    <footer>
-        <div class="footer-rights">
-            www.hariomportfolio.com | All Rights Reserved
-        </div>
-    </footer>
-
-    <!-- Typed.js Script for dynamic roles -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['Web Designer', 'Web Developer', 'React Developer', 'MERN Stack Developer'],
-            typeSpeed: 50,
-            backSpeed: 25,
-            loop: true
-        });
-    </script>
-</body>
-
-</html>
+<!-- ===== Typed.js Script ===== -->
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+  var typed = new Typed('#typed', {
+    strings: ['Web Developer', 'MERN Stack Developer', 'Frontend Enthusiast'],
+    typeSpeed: 60,
+    backSpeed: 40,
+    loop: true
+  });
+</script>
