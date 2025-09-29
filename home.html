@@ -1,186 +1,123 @@
 <head>
+  <style>
+    /* ===== Reset & Global ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-/* ===== Reset & Global ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #10102e, #4b426b);
+      color: #fff;
+    }
 
-html, body {
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #10102e, #4b426b);
-    color: #fff;
-}
+    /* ===== Navigation ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color: rgba(18, 18, 62, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-/* ===== Navigation ===== */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background-color: rgba(18, 18, 62, 0.9);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+    nav .logo { font-size: 1.6rem; font-weight: 600; color: #fff; }
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin-left: 25px; }
+    nav ul li a { color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav ul li a:hover { color: #aa6b80; }
 
-nav .logo {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #fff;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: #aa6b80;
-}
-
-/* ===== Home Section ===== */
-.homeSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 80px 10%;
-    min-height: 100vh;
-    gap: 40px;
-}
-
-.homeLeft {
-    max-width: 55%;
-}
-
-.homeLeft h1 {
-    font-size: 3.2rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.homeLeft h1 .purple {
-    color: #aa6b80;
-}
-
-.homeLeft h2 {
-    font-size: 2rem;
-    color: #ccc;
-    margin-bottom: 20px;
-    height: 45px;
-}
-
-.homeLeft p {
-    font-size: 1.15rem;
-    color: #d3d3d3;
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-/* ===== Buttons ===== */
-.homeButtons a {
-    padding: 12px 25px;
-    border-radius: 6px;
-    font-weight: 500;
-    text-decoration: none;
-    margin-right: 15px;
-    transition: 0.3s;
-}
-
-.homeButtons .btn {
-    background-color: #aa6b80;
-    color: #fff;
-}
-
-.homeButtons .btn:hover {
-    background-color: #fff;
-    color: #aa6b80;
-    border: 2px solid #aa6b80;
-}
-
-.homeButtons .btn-outline {
-    border: 2px solid #aa6b80;
-    background: transparent;
-    color: #aa6b80;
-}
-
-.homeButtons .btn-outline:hover {
-    background-color: #aa6b80;
-    color: #fff;
-}
-
-/* ===== Social Links ===== */
-.socialLinks {
-    margin-top: 20px;
-    font-size: 1rem;
-}
-
-.socialLinks a {
-    color: #d3d3d3;
-    text-decoration: none;
-    margin-right: 10px;
-    transition: 0.3s;
-}
-
-.socialLinks a:hover {
-    color: #aa6b80;
-}
-
-/* ===== Right Image ===== */
-.homeRight {
-    max-width: 40%;
-    display: flex;
-    justify-content: center;
-}
-
-.homeRight .profileImg {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-    transition: transform 0.3s;
-}
-
-.homeRight .profileImg:hover {
-    transform: scale(1.05);
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 992px) {
+    /* ===== Home Section ===== */
     .homeSection {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 50px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 10%;
+      min-height: 100vh;
+      gap: 40px;
     }
 
-    .homeLeft, .homeRight {
-        max-width: 100%;
+    .homeLeft { max-width: 55%; }
+    .homeLeft h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 15px; }
+    .homeLeft h1 .purple { color: #aa6b80; }
+    .homeLeft h2 { font-size: 2rem; color: #ccc; margin-bottom: 20px; height: 45px; }
+    .homeLeft p { font-size: 1.15rem; color: #d3d3d3; line-height: 1.8; margin-bottom: 25px; }
+
+    /* ===== Buttons ===== */
+    .homeButtons {
+      display: flex;
+      gap: 15px;
     }
 
+    .homeButtons a {
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .homeButtons .btn { background-color: #aa6b80; color: #fff; }
+    .homeButtons .btn:hover { background-color: #fff; color: #aa6b80; border: 2px solid #aa6b80; }
+    .homeButtons .btn-outline { border: 2px solid #aa6b80; background: transparent; color: #aa6b80; }
+    .homeButtons .btn-outline:hover { background-color: #aa6b80; color: #fff; }
+
+    /* ===== Social Links ===== */
+    .socialLinks {
+      margin-top: 20px;
+      font-size: 1rem;
+      display: flex;
+      gap: 10px;
+    }
+
+    .socialLinks a { color: #d3d3d3; text-decoration: none; transition: 0.3s; }
+    .socialLinks a:hover { color: #aa6b80; }
+
+    /* ===== Right Image ===== */
     .homeRight {
-        margin-bottom: 30px;
+      max-width: 40%;
+      display: flex;
+      justify-content: center;
     }
 
     .homeRight .profileImg {
-        max-width: 250px;
+      width: 100%;
+      max-width: 350px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+      transition: transform 0.3s;
     }
-}
 
-    </style>
+    .homeRight .profileImg:hover { transform: scale(1.05); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 992px) {
+      .homeSection {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 50px 5%;
+        gap: 30px;
+      }
+
+      .homeLeft, .homeRight { max-width: 100%; }
+
+      .homeRight { margin-bottom: 20px; }
+      .homeRight .profileImg { max-width: 300px; width: 80%; }
+
+      /* Buttons stacked vertically */
+      .homeButtons { flex-direction: column; align-items: center; width: 100%; }
+      .homeButtons a { width: 70%; margin: 0; }
+
+      /* Social links stacked vertically */
+      .socialLinks { flex-direction: column; align-items: center; gap: 8px; font-size: 0.9rem; }
+    }
+  </style>
 </head>
 
 <section class="homeSection">
@@ -196,7 +133,7 @@ nav ul li a:hover {
       <a href="https://github.com/HariomSagitra" target="_blank" class="btn btn-outline">Visit Github</a>
     </div>
     <div class="socialLinks">
-      <a href="https://www.linkedin.com/in/hariom-sagitra-41627b294" target" target="_blank">LinkedIn</a> |
+      <a href="https://www.linkedin.com/in/hariom-sagitra-41627b294" target="_blank">LinkedIn</a>
       <a href="https://github.com/HariomSagitra" target="_blank">GitHub</a>
     </div>
   </div>
