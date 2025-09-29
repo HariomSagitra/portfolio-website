@@ -1,0 +1,380 @@
+<head>
+
+  <style>
+/* ===== Reset & Global ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #10102e, #4b426b);
+    color: #fff;
+}
+
+/* ===== Navigation ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(18, 18, 62, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .logo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #aa6b80;
+}
+
+/* ===== Home Section ===== */
+.homeSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 5%;
+    min-height: 100vh;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.homeLeft {
+    max-width: 55%;
+}
+
+.homeLeft h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.homeLeft h1 .purple {
+    color: #aa6b80;
+}
+
+.homeLeft h2 {
+    font-size: 2rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    height: 45px;
+}
+
+.homeLeft p {
+    font-size: 1.15rem;
+    color: #d3d3d3;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.homeButtons a {
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.homeButtons .btn {
+    background-color: #aa6b80;
+    color: #fff;
+}
+
+.homeButtons .btn:hover {
+    background-color: #fff;
+    color: #aa6b80;
+    border: 2px solid #aa6b80;
+}
+
+.homeButtons .btn-outline {
+    border: 2px solid #aa6b80;
+    background: transparent;
+    color: #aa6b80;
+}
+
+.homeButtons .btn-outline:hover {
+    background-color: #aa6b80;
+    color: #fff;
+}
+
+.socialLinks {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.socialLinks a {
+    color: #d3d3d3;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.socialLinks a:hover {
+    color: #aa6b80;
+}
+
+.homeRight {
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.homeRight .profileImg {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    transition: transform 0.3s;
+}
+
+.homeRight .profileImg:hover {
+    transform: scale(1.05);
+}
+
+/* ===== About Section ===== */
+.aboutSection {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 60px 5%;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.aboutSection:hover {
+    transform: translateY(-5px);
+}
+
+.aboutSection h2 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    color: #aa6b80;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    position: relative;
+}
+
+.aboutSection h2::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #aa6b80;
+    margin-top: 12px;
+    border-radius: 2px;
+}
+
+.aboutSection p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.aboutSection strong {
+    color: #aa6b80;
+    font-weight: 600;
+}
+
+.aboutSection .purple {
+    color: #aa6b80;
+    font-weight: 600;
+}
+
+/* ===== Services Section ===== */
+.servicesSection {
+    padding: 100px 5%;
+    background: linear-gradient(135deg, #0a0a33, #1c1c4d);
+    color: #fff;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servicesSection h2 {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: #aa6b80;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.servicesSection h2::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #aa6b80;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.servicesContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.serviceCard {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 35px 25px;
+    border-radius: 15px;
+    flex: 1 1 250px;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    text-align: left;
+}
+
+.serviceCard:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.serviceCard h3 {
+    margin-bottom: 15px;
+    color: #aa6b80;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.serviceCard p {
+    color: #d3d3d3;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+    .homeSection, .aboutSection, .servicesSection {
+        padding: 50px 5%;
+    }
+
+    .homeSection {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .homeLeft, .homeRight {
+        max-width: 100%;
+    }
+
+    .homeRight {
+        margin-bottom: 30px;
+    }
+
+    .servicesContainer {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .serviceCard {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .homeLeft h1 {
+        font-size: 2.2rem;
+    }
+
+    .homeLeft h2 {
+        font-size: 1.5rem;
+    }
+
+    .aboutSection h2 {
+        font-size: 2rem;
+    }
+
+    .servicesSection h2 {
+        font-size: 2rem;
+    }
+
+    .serviceCard h3 {
+        font-size: 1.3rem;
+    }
+
+    .serviceCard p, .aboutSection p {
+        font-size: 0.95rem;
+    }
+}
+
+    </style>
+</head>
+
+<section class="servicesSection">
+  <h2>My Services</h2>
+  <div class="servicesContainer">
+    
+    <div class="serviceCard">
+      <h3>Web Development</h3>
+      <p>
+        I build modern, responsive websites that look great on all devices. 
+        My focus is on clean code, fast loading times, and smooth user experience. 
+        Technologies I use include HTML5, CSS3, JavaScript, and React.js.
+      </p>
+    </div>
+
+    <div class="serviceCard">
+      <h3>MERN Stack Development</h3>
+      <p>
+        I develop full-stack web applications using the MERN stack — 
+        MongoDB, Express.js, React.js, and Node.js. 
+        I can create secure, scalable, and dynamic applications that solve real-world problems.
+      </p>
+    </div>
+
+    <div class="serviceCard">
+      <h3>UI/UX Design</h3>
+      <p>
+        I design intuitive and user-friendly interfaces for web and mobile apps. 
+        My designs focus on usability, accessibility, and modern aesthetics, 
+        ensuring a seamless experience for all users.
+      </p>
+    </div>
+
+    <div class="serviceCard">
+      <h3>Website Optimization & SEO</h3>
+      <p>
+        I improve website performance, optimize load times, and implement SEO best practices. 
+        This ensures that websites not only look great but also rank better on search engines, 
+        attracting more users and engagement.
+      </p>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariom - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ===== Global Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #000021;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* ===== Navigation ===== */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: #12123e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #aa6b80;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 100px 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-left {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-left h1 {
+            font-size: 2.8rem;
+        }
+
+        .hero-left .purple {
+            color: #aa6b80;
+        }
+
+        .hero-left h2 {
+            margin: 20px 0;
+            font-size: 1.8rem;
+            color: #ccc;
+        }
+
+        .hero-left .buttons {
+            margin-top: 40px;
+        }
+
+        .hero-left .btn {
+            padding: 12px 25px;
+            margin-right: 20px;
+            border: 2px solid #fff;
+            border-radius: 6px;
+            background-color: #1e2167;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero-left .btn:hover {
+            background-color: #aa6b80;
+            border-color: #aa6b80;
+        }
+
+        /* Hero Right Image */
+        .hero-right {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-right img {
+            max-width: 45%;
+            border-radius: 160px;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: #0e0e1a;
+            padding: 20px 0;
+            text-align: center;
+            color: #888;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+        /* ===== Responsive ===== */
+        @media screen and (max-width: 900px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-left h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-left h2 {
+                font-size: 1.4rem;
+            }
+
+            .hero-left .buttons .btn {
+                margin-bottom: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Hariom's Portfolio</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Hi, My name is <span class="purple">Hariom</span></h1>
+            <h2>I am a <span id="element"></span></h2>
+            <div class="buttons">
+                <a href="Resume.pdf" target="_blank" class="btn">Download Resume</a>
+                <a href="https://github.com/HariomSagitra" target="_blank" class="btn btn-outline">Visit Github</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <img src="om.jpg" alt="Hariom Image">
+        </div>
+    </section>
+
+    <!-- Optional: Footer -->
+    <footer>
+        <div class="footer-rights">
+            www.hariomportfolio.com | All Rights Reserved
+        </div>
+    </footer>
+
+    <!-- Typed.js Script for dynamic roles -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Designer', 'Web Developer', 'React Developer', 'MERN Stack Developer'],
+            typeSpeed: 50,
+            backSpeed: 25,
+            loop: true
+        });
+    </script>
+</body>
+
+</html>
