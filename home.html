@@ -1,4 +1,10 @@
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hariom | Portfolio</title>
   <style>
     /* ===== Reset & Global ===== */
     * {
@@ -7,148 +13,129 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
+    body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #10102e, #4b426b);
       color: #fff;
-    }
-
-    /* ===== Navigation ===== */
-    nav {
+      height: 100vh;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 20px 10%;
-      background-color: rgba(18, 18, 62, 0.9);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav .logo { font-size: 1.6rem; font-weight: 600; color: #fff; }
-    nav ul { display: flex; list-style: none; }
-    nav ul li { margin-left: 25px; }
-    nav ul li a { color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s; }
-    nav ul li a:hover { color: #aa6b80; }
-
-    /* ===== Home Section ===== */
-    .homeSection {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 80px 10%;
-      min-height: 100vh;
-      gap: 40px;
-    }
-
-    .homeLeft { max-width: 55%; }
-    .homeLeft h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 15px; }
-    .homeLeft h1 .purple { color: #aa6b80; }
-    .homeLeft h2 { font-size: 2rem; color: #ccc; margin-bottom: 20px; height: 45px; }
-    .homeLeft p { font-size: 1.15rem; color: #d3d3d3; line-height: 1.8; margin-bottom: 25px; }
-
-    /* ===== Buttons ===== */
-    .homeButtons {
-      display: flex;
-      gap: 15px;
-    }
-
-    .homeButtons a {
-      padding: 12px 25px;
-      border-radius: 6px;
-      font-weight: 500;
-      text-decoration: none;
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .homeButtons .btn { background-color: #aa6b80; color: #fff; }
-    .homeButtons .btn:hover { background-color: #fff; color: #aa6b80; border: 2px solid #aa6b80; }
-    .homeButtons .btn-outline { border: 2px solid #aa6b80; background: transparent; color: #aa6b80; }
-    .homeButtons .btn-outline:hover { background-color: #aa6b80; color: #fff; }
-
-    /* ===== Social Links ===== */
-    .socialLinks {
-      margin-top: 20px;
-      font-size: 1rem;
-      display: flex;
-      gap: 10px;
-    }
-
-    .socialLinks a { color: #d3d3d3; text-decoration: none; transition: 0.3s; }
-    .socialLinks a:hover { color: #aa6b80; }
-
-    /* ===== Right Image ===== */
-    .homeRight {
-      max-width: 40%;
-      display: flex;
       justify-content: center;
     }
 
-    .homeRight .profileImg {
-      width: 100%;
-      max-width: 350px;
-      border-radius: 15px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-      transition: transform 0.3s;
+    /* ===== Hero Section ===== */
+    .hero {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      max-width: 700px;
     }
 
-    .homeRight .profileImg:hover { transform: scale(1.05); }
+    .hero img {
+      width: 150px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
 
-    /* ===== Responsive ===== */
-    @media (max-width: 992px) {
-      .homeSection {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 50px 5%;
-        gap: 30px;
-      }
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
 
-      .homeLeft, .homeRight { max-width: 100%; }
+    .hero h1 span {
+      color: #e58ca6;
+    }
 
-      .homeRight { margin-bottom: 20px; }
-      .homeRight .profileImg { max-width: 300px; width: 80%; }
+    .hero h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
 
-      /* Buttons stacked vertically */
-      .homeButtons { flex-direction: column; align-items: center; width: 100%; }
-      .homeButtons a { width: 70%; margin: 0; }
+    .hero p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
 
-      /* Social links stacked vertically */
-      .socialLinks { flex-direction: column; align-items: center; gap: 8px; font-size: 0.9rem; }
+    /* ===== Buttons ===== */
+    .buttons {
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      margin: 5px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn.primary {
+      background: #e58ca6;
+      color: #fff;
+    }
+
+    .btn.primary:hover {
+      background: #d2748f;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid #e58ca6;
+      color: #e58ca6;
+    }
+
+    .btn.secondary:hover {
+      background: #e58ca6;
+      color: #fff;
+    }
+
+    /* ===== Social Links ===== */
+    .socials {
+      margin-top: 10px;
+    }
+
+    .socials a {
+      color: #bbb;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #fff;
     }
   </style>
 </head>
-
-<section class="homeSection">
-  <div class="homeLeft">
-    <h1>Hi, I'm <span class="purple">Hariom</span></h1>
-    <h2><span id="typed"></span></h2>
+<body>
+  <section class="hero">
+    <img src="prob.jpg" alt="Profile Image" />
+    <h1>Hi, I'm <span>Hariom</span></h1>
+    <h2>Web Developer</h2>
     <p>
       I build responsive and dynamic web applications that solve real-world problems. 
       Passionate about clean code, modern design, and continuous learning.
     </p>
-    <div class="homeButtons">
-      <a href="Resume.pdf" class="btn">Download Resume</a>
-      <a href="https://github.com/HariomSagitra" target="_blank" class="btn btn-outline">Visit Github</a>
+    <div class="buttons">
+      <a href="resume.pdf" class="btn primary">Download Resume</a>
+      <a href="https://github.com/HariomSagitra" target="_blank" class="btn secondary">Visit GitHub</a>
     </div>
-    <div class="socialLinks">
-      <a href="https://www.linkedin.com/in/hariom-sagitra-41627b294" target="_blank">LinkedIn</a>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/hariom-sagitra-41627b294" target="_blank">LinkedIn</a> |
       <a href="https://github.com/HariomSagitra" target="_blank">GitHub</a>
     </div>
-  </div>
-  <div class="homeRight">
-    <img src="prob.jpg" alt="Hariom" class="profileImg">
-  </div>
-</section>
+  </section>
+</body>
+</html>
 
-<!-- ===== Typed.js Script ===== -->
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-<script>
-  var typed = new Typed('#typed', {
-    strings: ['Web Developer', 'MERN Stack Developer', 'Frontend Enthusiast'],
-    typeSpeed: 60,
-    backSpeed: 40,
-    loop: true
-  });
-</script>
