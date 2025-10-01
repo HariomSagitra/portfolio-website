@@ -1,94 +1,217 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    
-<style>
-    /* === About Section === */
-.aboutSection {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 60px 40px;
-    text-align: left;
-    background-color: rgba(255, 255, 255, 0.03); 
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    font-family: 'Poppins', sans-serif;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hariom - About</title>
+  <style>
+    /* ===== Global ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-.aboutSection h2 {
-    font-size: 2.5rem;
-    margin-bottom: 25px;
-    color: rgb(170, 107, 128);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-}
+    body {
+      background-color: #000021;
+      color: #fff;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
 
-.aboutSection p {
-    font-size: 1.2rem;
-    line-height: 1.9;
-    color: #7d4545;
-    margin-bottom: 18px;
-}
+    /* ===== Navigation ===== */
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #12123e;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
 
-.aboutSection strong {
-    color: #643e3e;
-    font-weight: 600;
-}
+    nav .logo {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #fff;
+    }
 
-.aboutSection .purple {
-    color: rgb(170, 107, 128);
-    font-weight: 600;
-}
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
 
-/* Optional: add a subtle separator line after heading */
-.aboutSection h2::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: rgb(170, 107, 128);
-    margin-top: 10px;
-    border-radius: 2px;
-}
+    nav ul li {
+      margin-left: 20px;
+    }
 
-/* Responsive */
-@media (max-width: 768px) {
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #e58ca6;
+    }
+
+    /* Hamburger */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #fff;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* Mobile nav */
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #12123e;
+        flex-direction: column;
+        width: 200px;
+        text-align: center;
+        display: none;
+        padding: 20px 0;
+      }
+
+      nav ul li {
+        margin: 15px 0;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* ===== About Section ===== */
     .aboutSection {
-        padding: 40px 20px;
+      max-width: 900px;
+      margin: 140px auto 80px; /* margin-top increased to avoid navbar overlap */
+      padding: 60px 40px;
+      text-align: left;
+      background-color: rgba(255, 255, 255, 0.03); 
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
     }
 
     .aboutSection h2 {
-        font-size: 2rem;
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      color: rgb(170, 107, 128);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
     }
 
     .aboutSection p {
-        font-size: 1rem;
-        line-height: 1.6;
+      font-size: 1.2rem;
+      line-height: 1.9;
+      color: #7d4545;
+      margin-bottom: 18px;
     }
 
-    
-}
+    .aboutSection strong {
+      color: #643e3e;
+      font-weight: 600;
+    }
 
-</style>
+    .aboutSection .purple {
+      color: rgb(170, 107, 128);
+      font-weight: 600;
+    }
+
+    .aboutSection h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: rgb(170, 107, 128);
+      margin-top: 10px;
+      border-radius: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .aboutSection {
+        padding: 40px 20px;
+      }
+
+      .aboutSection h2 {
+        font-size: 2rem;
+      }
+
+      .aboutSection p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+  </style>
 </head>
+<body>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">Hariom</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="menu">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="project.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<section id="about" class="aboutSection">
-  <h2>About Me</h2>
-  <p>
-    Hi, I'm <span class="purple">Hariom</span> — a passionate 
-    <strong>MERN Stack Developer</strong> who loves turning ideas into 
-    real-world web applications. I enjoy solving problems with clean 
-    code, building responsive user interfaces, and designing efficient 
-    backend systems.
-  </p>
-  <p>
-    I have hands-on experience with <strong>HTML, CSS, JavaScript, React,
-    Node.js, Express, and MongoDB</strong>. Apart from coding, I enjoy 
-    learning new technologies, exploring open-source projects, and 
-    continuously improving my skills.
-  </p>
-  <p>
-    My goal is to grow as a full-stack developer and contribute to 
-    innovative projects that make a real impact.
-  </p>
-</section>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="aboutSection">
+    <h2>About Me</h2>
+    <p>
+      Hi, I'm <span class="purple">Hariom</span> — a passionate 
+      <strong>MERN Stack Developer</strong> who loves turning ideas into 
+      real-world web applications. I enjoy solving problems with clean 
+      code, building responsive user interfaces, and designing efficient 
+      backend systems.
+    </p>
+    <p>
+      I have hands-on experience with <strong>HTML, CSS, JavaScript, React,
+      Node.js, Express, and MongoDB</strong>. Apart from coding, I enjoy 
+      learning new technologies, exploring open-source projects, and 
+      continuously improving my skills.
+    </p>
+    <p>
+      My goal is to grow as a full-stack developer and contribute to 
+      innovative projects that make a real impact.
+    </p>
+  </section>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
