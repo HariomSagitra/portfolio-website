@@ -1,34 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <style>
-        .projectBtn {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hariom - Projects</title>
+<style>
+/* ===== Global ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #10102e, #4b426b);
+    color: #fff;
+}
+
+/* ===== Navigation ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(18,18,62,0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav .logo { font-size: 1.6rem; font-weight: 600; color: #fff; }
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 25px; }
+nav ul li a { color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s; }
+nav ul li a:hover { color: #aa6b80; }
+
+/* Hamburger */
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+.menu-toggle span { height: 3px; width: 25px; background: #fff; margin: 4px 0; border-radius: 2px; }
+
+/* Mobile nav */
+@media (max-width: 768px) {
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #12123e;
+        flex-direction: column;
+        width: 200px;
+        text-align: center;
+        display: none;
+        padding: 20px 0;
+    }
+    nav ul li { margin: 15px 0; }
+    nav ul.active { display: flex; }
+    .menu-toggle { display: flex; }
+}
+
+/* ===== Projects Section ===== */
+.projectsSection {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.projectCard {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    background-color: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+.projectCard img.projectImage {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.projectInfo {
+    flex: 1;
+}
+.projectInfo h3 { color: #aa6b80; font-size: 1.8rem; margin-bottom: 15px; }
+.projectInfo p { font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 12px; }
+.projectInfo strong { color: #aa6b80; }
+.projectBtn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: rgb(170, 107, 128);
+    background-color: #aa6b80;
     color: #fff;
     border-radius: 6px;
     text-decoration: none;
+    margin-right: 10px;
     transition: 0.3s;
-    margin-right: 10px; 
+}
+.projectBtn:hover {
+    background-color: #fff;
+    color: #aa6b80;
+    border: 2px solid #aa6b80;
 }
 
-.projectImage {
-  width: 800px;
-  height: 400px;;
+/* Responsive */
+@media (max-width: 992px) {
+    .projectCard { flex-direction: column; text-align: center; }
+    .projectCard img.projectImage { max-width: 80%; margin-bottom: 20px; }
+    .projectInfo { width: 100%; }
 }
-
-    </style>
+</style>
 </head>
-<div class="projectCard">
-  <img src="ecommerse-img(1).png" alt="E-commerce Project" class="projectImage">
-  <div class="projectInfo">
-    <h3>MERN E-commerce Website</h3>
-    <p>
-      A full-stack e-commerce application built using MongoDB, Express.js, React.js, and Node.js.
-      Features product listing, product details, shopping cart, user authentication, 
-      admin panel, and Stripe payment integration. Fully responsive and optimized for performance.
-    </p>
-    <p><strong>Technologies:</strong> MongoDB, Express, React, Node.js, Redux, Stripe API</p>
-    <a href="https://github.com/HariomSagitra" target="_blank" class="projectBtn">View on GitHub</a>
-    <a href="https://mern-ecommerce-demo.netlify.app" target="_blank" class="projectBtn">Live Demo</a>
-  </div>
-</div>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">Hariom</div>
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul id="menu">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- PROJECTS SECTION -->
+<section class="projectsSection">
+    <div class="projectCard">
+        <img src="ecommerse-img(1).png" alt="E-commerce Project" class="projectImage">
+        <div class="projectInfo">
+            <h3>MERN E-commerce Website</h3>
+            <p>
+                A full-stack e-commerce application built using MongoDB, Express.js, React.js, and Node.js.
+                Features product listing, product details, shopping cart, user authentication, 
+                admin panel, and Stripe payment integration. Fully responsive and optimized for performance.
+            </p>
+            <p><strong>Technologies:</strong> MongoDB, Express, React, Node.js, Redux, Stripe API</p>
+            <a href="https://github.com/HariomSagitra" target="_blank" class="projectBtn">View on GitHub</a>
+            <a href="https://mern-ecommerce-demo.netlify.app" target="_blank" class="projectBtn">Live Demo</a>
+        </div>
+    </div>
+
+    <!-- Add more project cards here if needed -->
+</section>
+
+<script>
+// Toggle menu
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>
